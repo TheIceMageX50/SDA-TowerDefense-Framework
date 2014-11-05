@@ -1,4 +1,5 @@
-public class LargeHillMap extends Map {
+public class LargeHillMap extends GameMap {
+	
 	public LargeHillMap() {
 		//give detail one
 		//give detail two

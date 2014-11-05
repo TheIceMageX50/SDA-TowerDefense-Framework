@@ -1,10 +1,11 @@
-public abstract class MapFactory {
-	abstract Map createMap(String type) ;
-	public Map setUpMap(String whatMap) {
-		Map map = createMap(whatMap);
-		map.addHomeGround();
-		map.addNotTraversibleTerrain();
-		map.addSurroundingTerrain();
-		return map;
+public class MapFactory {
+	
+	public GameMap createMap(String type) throws Exception {
+		switch (type) {
+		case "LargeHill": return new LargeHillMap();
+		case "LargeSwamp": return new LargeSwampMap();
+		case "LargeMap": return new LargeMap();
+		default: throw new Exception("Invalid type supplied.");
+		}
 	}
 }
