@@ -1,3 +1,5 @@
+package maps;
+
 public class MapFactory {
 	
 	public GameMap createMap(String type) throws Exception {
