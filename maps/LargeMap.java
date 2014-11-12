@@ -2,8 +2,14 @@ package maps;
 
 public class LargeMap extends GameMap {
 	
-	public LargeMap() {
-		//ctor
+	public LargeMap()
+	{
+		super();
+	}
+	
+	public LargeMap(int width, int height)
+	{
+		super(width, height);
 	}
 
 	@Override

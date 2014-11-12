@@ -18,6 +18,7 @@ public class Renderer
 	{
 		int height = map.getHeight();
 		int width = map.getWidth();
-		screen.println("Successfully rendered map of dimensions " + width + "x" + height + ".");
+		screen.println("Successfully rendered the map (Type: " + map.getClass().getName()
+				       + ") of dimensions " + width + "x" + height + ".");
 	}
 }

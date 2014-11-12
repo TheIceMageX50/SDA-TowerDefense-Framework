@@ -1,19 +1,24 @@
 package maps;
 
-import java.util.ArrayList;
-import java.util.List;
+import misc.TerrainType;
+
 
 public abstract class GameMap
 {
 	protected String detailOne;
 	protected String detailTwo;
-	protected List<Object> areas;
+	protected GridSquare[][] grid;
 	protected int width, height;
 	
 	public GameMap()
 	{
-		areas = new ArrayList<Object>(); //TODO make it a list of something other
-										 //than Objects?
+		this(30, 50);
+	}
+	
+	public GameMap(int width, int height)
+	{
+		grid = new GridSquare[height][width];
+		setUpDefaultSquares();
 	}
 	
 	public abstract void addHomeGround();
@@ -43,5 +48,14 @@ public abstract class GameMap
 	public void setHeight(int val)
 	{
 		height = val;
+	}
+	
+	private void setUpDefaultSquares()
+	{
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid[i].length; j++) {
+				grid[i][j] = new GridSquare(TerrainType.DEFAULT);
+			}
+		}
 	}
 }

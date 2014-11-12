@@ -14,7 +14,7 @@ public class GameEngine
 		se = new SoundEngine();
 	}
 	
-	public void renderMap(GameMap map) 
+	public void renderMap() 
 	{
 		renderer.renderMap();
 	}
