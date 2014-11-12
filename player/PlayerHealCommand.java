@@ -1,3 +1,4 @@
+package player;
 public class PlayerHealCommand implements Command
 {
 	Player player;

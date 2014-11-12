@@ -1,3 +1,4 @@
+package player;
 public class Player {
 	protected int CurrentHP, MaxHP, points;
 	public Player()

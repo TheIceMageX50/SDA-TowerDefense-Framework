@@ -49,6 +49,19 @@ public abstract class GameMap
 	{
 		height = val;
 	}
+	public void placeTower(int x, int y)
+	{
+		if(grid[x][y].getTerrainType()==TerrainType.BASE_TOWER){
+			System.out.println("No can do..");
+		} else {
+			grid[x][y] = new GridSquare( TerrainType.PLACED_WALL ) ;
+		}
+	}
+	
+	public void takeTower(int x, int y)
+	{
+		grid[x][y] = new GridSquare(TerrainType.DEFAULT);
+	}
 	
 	private void setUpDefaultSquares()
 	{
