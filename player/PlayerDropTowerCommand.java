@@ -13,7 +13,6 @@ public class PlayerPlaceTowerCommand implements Command
 	public void execute()
 	{
 		map.placeTower(int xCoord, int yCoord);
-		
 	}
 	public void undo()
 	{

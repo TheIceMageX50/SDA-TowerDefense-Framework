@@ -1,15 +1,16 @@
 package player;
+import towers.BaseTower;
 public class PlayerHealCommand implements Command
 {
-	Player player;
+	BaseTower baseTower;
 	private int before=0;
 	public void execute()
 	{
-		before = player.getCurrentHP();
-		player.setCurrentHP(player.getMaxHP());
+		before = baseTower.getCurrentHP();
+		baseTower.setCurrentHP(MaxHP);
 	}
 	public void undo()
 	{
-		player.setCurrentHP(before);
+		baseTower.setCurrentHP(before);
 	}
 }

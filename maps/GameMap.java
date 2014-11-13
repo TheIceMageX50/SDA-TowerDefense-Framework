@@ -1,6 +1,7 @@
 package maps;
 
 import misc.TerrainType;
+import memento.Memento;
 
 
 public abstract class GameMap
@@ -9,6 +10,7 @@ public abstract class GameMap
 	protected String detailTwo;
 	protected GridSquare[][] grid;
 	protected int width, height;
+	protected GridSquare[][] state;
 	
 	public GameMap()
 	{
@@ -71,4 +73,21 @@ public abstract class GameMap
 			}
 		}
 	}
+	public void set(GridSquare[][] g)
+	{
+		this.state = g;
+	}
+	
+	public Memento saveToMemento()
+	{
+		return new Memento(state);
+	}
+	public void  restoreFromMemento(Memento m)
+	{
+		state = m.getSavedState();
+	}
+	
+	
+	
+	
 }
