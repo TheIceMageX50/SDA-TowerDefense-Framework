@@ -1,9 +1,13 @@
 package player;
+
+import towers.Tower;
+
 public class Player {
-	protected int  points;
+	private int points;
+	
 	public Player()
 	{
-		setPoints(1000);		
+		points = 1000;	
 	}
 
 	public int getPoint()

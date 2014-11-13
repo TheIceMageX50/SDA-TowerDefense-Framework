@@ -4,11 +4,12 @@ import minions.Minion;
 
 public class BaseTower implements Tower
 {
-	private int CurrentHP;
-	private final int MaxHP = 100;
+	private int currentHP;
+	private final int maxHP = 100;
+	
 	public BaseTower()
 	{
-		setCurrentHP(MaxHP);
+		currentHP = maxHP;
 	}
 	
 	public Minion spawnMinion() 
@@ -18,10 +19,10 @@ public class BaseTower implements Tower
 	}
 
 	public int getCurrentHP() {
-		return CurrentHP;
+		return currentHP;
 	}
 
 	public void setCurrentHP(int currentHP) {
-		CurrentHP = currentHP;
+		this.currentHP = currentHP;
 	}
 }
