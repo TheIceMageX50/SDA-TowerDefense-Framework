@@ -9,8 +9,8 @@ public class Minion
 	public Minion(int attack, int health, int speed)
 	{
 		this.attack = attack;
-		this.health = health;
-		this.speed = speed;
+		this.setHealth(health);
+		this.setSpeed(speed);
 	}
 	
 	public void applyStatChanges(StatChange... changes) //accept 1 or more StatChanges
@@ -25,9 +25,9 @@ public class Minion
 		switch (change) {
 		case ATK_BOOST : attack += 2;
 		break;
-		case HP_BOOST : health += 5;
+		case HP_BOOST : setHealth(getHealth() + 5);
 		break;
-		case SPEED_BOOST : speed += 2;
+		case SPEED_BOOST : setSpeed(getSpeed() + 2);
 		}
 	}
 
@@ -39,5 +39,21 @@ public class Minion
 	public void setAttack(int attack)
 	{
 		this.attack = attack;
+	}
+
+	public int getHealth() {
+		return health;
+	}
+
+	public void setHealth(int health) {
+		this.health = health;
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
 	}
 }
