@@ -12,7 +12,7 @@ public class GridSquare
 	
 	private GridSquare(TerrainType type)
 	{
-		
+		this.type = type;
 	}
 	public static GridSquare getGridSquareByType(TerrainType type)
 	{

@@ -13,7 +13,7 @@ public class LargeMap extends GameMap {
 	}
 
 	@Override
-	public void addHomeGround() {
+	public void addHomeGrounds() {
 		// TODO Auto-generated method stub
 		
 	}
