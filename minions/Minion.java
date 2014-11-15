@@ -1,6 +1,7 @@
 package minions;
 
 import misc.StatChange;
+import towers.Tower;
 
 public class Minion 
 {
@@ -55,5 +56,19 @@ public class Minion
 
 	public void setSpeed(int speed) {
 		this.speed = speed;
+	}
+	
+	public void attackObject(Object target)
+	{
+		//TODO At the least in case of attacking minions, need to add chance of fail/miss.
+		if (target instanceof Minion) {
+			Minion m = (Minion) target;
+			m.health -= this.attack;
+		} else if (target instanceof Tower) {
+			Tower t = (Tower) target;
+			t.setHP(t.getHP() - (t.getMaxHP() / 5));
+		} else {
+			//Would handle invalid attack target here
+		}
 	}
 }

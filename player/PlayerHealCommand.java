@@ -1,16 +1,25 @@
 package player;
-import towers.BaseTower;
+import towers.Tower;
+
 public class PlayerHealCommand implements Command
 {
-	BaseTower baseTower;
+	Tower tower;
 	private int before=0;
+	
+	public PlayerHealCommand(Tower tower)
+	{
+		this.tower = tower;
+	}
+	
 	public void execute()
 	{
-		before = baseTower.getCurrentHP();
-		baseTower.setCurrentHP(MaxHP);
+		before = tower.getHP();
+		tower.setHP(tower.getMaxHP());
+		System.out.println("Tower healed!");
 	}
+	
 	public void undo()
 	{
-		baseTower.setCurrentHP(before);
+		tower.setHP(before);
 	}
 }

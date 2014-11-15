@@ -21,4 +21,15 @@ public class Renderer
 		screen.println("Successfully rendered the map (Type: " + map.getClass().getName()
 				       + ") of dimensions " + width + "x" + height + ".");
 	}
+	
+	public void renderTower(int x, int y)
+	{
+		screen.println("Rendered tower placed at position " + "(" + x + "," + y + ") on the"
+				+ " map!");
+	}
+	
+	public void displayToScreen(Object obj)
+	{
+		screen.println(obj);
+	}
 }
