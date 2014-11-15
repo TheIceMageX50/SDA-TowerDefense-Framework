@@ -25,4 +25,20 @@ public class BaseTower implements Tower
 	public void setCurrentHP(int currentHP) {
 		this.currentHP = currentHP;
 	}
+
+	@Override
+	public void setHP(int hp) {
+		currentHP = hp;
+	}
+
+	@Override
+	public int getHP() {
+		return currentHP;
+	}
+	
+	@Override
+	public int getMaxHP()
+	{
+		return maxHP;
+	}
 }

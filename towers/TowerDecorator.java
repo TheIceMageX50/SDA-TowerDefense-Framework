@@ -15,4 +15,22 @@ public abstract class TowerDecorator implements Tower
 	{
 		return towerToBeDecorated.spawnMinion();
 	}
+	
+	@Override
+	public void setHP(int hp)
+	{
+		towerToBeDecorated.setHP(hp);
+	}
+	
+	@Override
+	public int getHP()
+	{
+		return towerToBeDecorated.getHP();
+	}
+	
+	@Override
+	public int getMaxHP()
+	{
+		return towerToBeDecorated.getMaxHP();
+	}
 }
