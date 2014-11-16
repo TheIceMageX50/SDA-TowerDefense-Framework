@@ -22,9 +22,20 @@ public class Renderer
 				       + ") of dimensions " + width + "x" + height + ".");
 	}
 	
+	public GameMap getMap()
+	{
+		return map;
+	}
+	
 	public void renderTower(int x, int y)
 	{
 		screen.println("Rendered tower placed at position " + "(" + x + "," + y + ") on the"
+				+ " map!");
+	}
+	
+	public void renderPlacedWall(int x, int y)
+	{
+		screen.println("Rendered wall placed at position " + "(" + x + "," + y + ") on the"
 				+ " map!");
 	}
 	

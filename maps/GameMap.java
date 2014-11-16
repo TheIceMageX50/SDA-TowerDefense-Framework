@@ -22,7 +22,7 @@ public abstract class GameMap
 	
 	public GameMap()
 	{
-		this(30, 50);
+		this(50, 30);
 	}
 	
 	public GameMap(int width, int height)
@@ -31,7 +31,9 @@ public abstract class GameMap
 		//height -2 accounts for 0-based indices AND that it is to be in second last row.
 		defaultTowerPos2 = new Point((width / 2) - 1, height - 2); 
 		grid = new GridSquare[height][width];
-		loadMapDef("../mapdef.txt");
+		this.height = height;
+		this.width = width;
+		loadMapDef("mapdef.txt");
 	}
 	
 	public abstract void addHomeGrounds();
@@ -48,33 +50,28 @@ public abstract class GameMap
 		return width;
 	}
 	
-	public void setWidth(int val)
-	{
-		width = val;
-	}
-	
 	public int getHeight()
 	{
 		return height;
 	}
 	
-	public void setHeight(int val)
+	public TerrainType inspect(int x, int y)
 	{
-		height = val;
+		return grid[x][y].getTerrainType();
 	}
 	
-	//TODO Probably convert to place wall? Base towers will be 2 per map and we don't have
-	//another kind of turret/tower class atm.
-	public void placeTower(int x, int y)
+	public void placeWall(int x, int y)
 	{
-		if (grid[x][y].getTerrainType() == TerrainType.BASE_TOWER) {
-			System.out.println("No can do..");
+		GameEngine engine = GameEngine.getInstance();
+		if (grid[x][y].getTerrainType() != TerrainType.DEFAULT) {
+			engine.display("No can do..");
 		} else {
-			grid[x][y] = GridSquare.getGridSquareByType(TerrainType.BASE_TOWER) ;
+			grid[x][y] = GridSquare.getGridSquareByType(TerrainType.PLACED_WALL);
+			engine.renderPlacedWallOnMap(x, y);
 		}
 	}
 	
-	public void takeTower(int x, int y)
+	public void takeWall(int x, int y)
 	{
 		grid[x][y] = GridSquare.getGridSquareByType(TerrainType.DEFAULT);
 	}
@@ -82,6 +79,16 @@ public abstract class GameMap
 	public void set(GridSquare[][] g)
 	{
 		this.state = g;
+	}
+	
+	public Point getTowerPos()
+	{
+		return towerPos;
+	}
+	
+	public Point getTower2Pos()
+	{
+		return towerPos2;
 	}
 	
 	public Point getDefaultTower1Pos()
@@ -103,16 +110,6 @@ public abstract class GameMap
 		state = m.getSavedState();
 	}
 	
-	//TODO Probably going to remove this; it's been replaced by part of loadMapDef really.
-	/*private void setUpDefaultSquares()
-	{
-		for (int i = 0; i < grid.length; i++) {
-			for (int j = 0; j < grid[i].length; j++) {
-				grid[i][j] = new GridSquare(TerrainType.DEFAULT);
-			}
-		}
-	}*/
-	
 	private void loadMapDef(String filepath)
 	{
 		int lineNo = 0;
@@ -125,7 +122,7 @@ public abstract class GameMap
 			engine.display("mapdef file not found! Exiting... D:");
 			System.exit(-1);
 		}
-		while (scanner.hasNext()) {
+		while (scanner.hasNext() && lineNo < height) {
 			String line = scanner.nextLine();
 			char ch;
 			for (int i = 0; i < line.length(); i++) {

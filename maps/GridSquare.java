@@ -14,12 +14,12 @@ public class GridSquare
 	{
 		this.type = type;
 	}
+	
 	public static GridSquare getGridSquareByType(TerrainType type)
 	{
 		GridSquare grid;
 		
-		if(!terrainTypes.containsKey(type))
-		{
+		if(!terrainTypes.containsKey(type)) {
 			grid = new GridSquare(type);
 			terrainTypes.put(type,grid);
 		} else {

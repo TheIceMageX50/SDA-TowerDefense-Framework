@@ -1,5 +1,6 @@
 package minions;
 
+import misc.GameEngine;
 import misc.StatChange;
 import towers.Tower;
 
@@ -60,10 +61,19 @@ public class Minion
 	
 	public void attackObject(Object target)
 	{
-		//TODO At the least in case of attacking minions, need to add chance of fail/miss.
+		GameEngine engine = GameEngine.getInstance();
+		
 		if (target instanceof Minion) {
 			Minion m = (Minion) target;
-			m.health -= this.attack;
+			int rand = (int) (Math.random() * 10);
+			if (rand < 6) {
+				//Missed!
+				//engine.display("Minion attack missed!");
+			} else {
+				//Hit!
+				//engine.display("Minion attack hit!");
+				m.health -= this.attack;
+			}
 		} else if (target instanceof Tower) {
 			Tower t = (Tower) target;
 			t.setHP(t.getHP() - (t.getMaxHP() / 5));

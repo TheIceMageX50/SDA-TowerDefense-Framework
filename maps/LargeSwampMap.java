@@ -16,9 +16,6 @@ public class LargeSwampMap extends GameMap
 	{
 		super(width, height);
 		swampify();
-		//give detail one
-		//give detail two
-		//areas.add("bwn onwognwiugr infowgn");
 	}
 
 	@Override
