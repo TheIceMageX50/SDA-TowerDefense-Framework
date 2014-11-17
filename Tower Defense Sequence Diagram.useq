@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.7" icons="true">  
+  <object id="1" language="java" name="misc.GameDriver" project="SDA-TowerDefense-Framework" 
+    file="/SDA-TowerDefense-Framework/misc/GameDriver.java" binary="false" label="gameDriver" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="1005" y="0"/>    
+    <execution id="2">      
+      <position height="782" width="129" x="5" y="125"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="27" width="7" x="66" y="285"/>    
+    </execution>    
+    <execution id="18">      
+      <position height="27" width="7" x="66" y="395"/>    
+    </execution>    
+    <execution id="19">      
+      <position height="27" width="7" x="66" y="523"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="27" width="7" x="66" y="612"/>    
+    </execution>    
+    <execution id="21">      
+      <position height="27" width="7" x="66" y="742"/>    
+    </execution>  
+  </object>  
+  <object id="22" language="java" name="misc.GameEngine" project="SDA-TowerDefense-Framework" 
+    file="/SDA-TowerDefense-Framework/misc/GameEngine.java" binary="false" label="gameEngine" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="551" y="0"/>    
+    <execution id="4">      
+      <position height="203" width="136" x="138" y="152"/>    
+    </execution>    
+    <execution id="28">      
+      <position height="27" width="7" x="203" y="238"/>    
+    </execution>    
+    <execution id="29">      
+      <position height="27" width="7" x="203" y="274"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="27" width="136" x="138" y="445"/>    
+    </execution>  
+  </object>  
+  <object id="30" language="java" name="misc.Renderer" project="SDA-TowerDefense-Framework" 
+    file="/SDA-TowerDefense-Framework/misc/Renderer.java" binary="false" label="renderer" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="667" y="0"/>    
+    <execution id="24">      
+      <position height="113" width="105" x="278" y="179"/>    
+    </execution>  
+  </object>  
+  <object id="32" language="java" name="misc.SoundEngine" project="SDA-TowerDefense-Framework" 
+    file="/SDA-TowerDefense-Framework/misc/SoundEngine.java" binary="false" label="soundEngine" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="1012" y="0"/>    
+    <execution id="26">      
+      <position height="110" width="140" x="387" y="218"/>    
+    </execution>  
+  </object>  
+  <object id="34" language="java" name="maps.MapFactory" project="SDA-TowerDefense-Framework" 
+    file="/SDA-TowerDefense-Framework/maps/MapFactory.java" binary="false" label="mapFactory" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="951" y="0"/>    
+    <execution id="6">      
+      <position height="88" width="125" x="531" y="361"/>    
+    </execution>  
+  </object>  
+  <object id="36" language="java" name="towers.StrongTowerDecorator" project="SDA-TowerDefense-Framework" 
+    file="/SDA-TowerDefense-Framework/towers/StrongTowerDecorator.java" binary="false" label="strongTowerDecorator" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="1291" y="0"/>    
+    <execution id="14">      
+      <position height="189" width="221" x="660" y="661"/>    
+    </execution>    
+    <execution id="39">      
+      <position height="81" width="7" x="767" y="715"/>    
+    </execution>  
+  </object>  
+  <object id="41" language="java" name="towers.BaseTower" project="SDA-TowerDefense-Framework" 
+    file="/SDA-TowerDefense-Framework/towers/BaseTower.java" binary="false" label="baseTower" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="908" y="0"/>    
+    <execution id="10">      
+      <position height="88" width="121" x="885" y="489"/>    
+    </execution>    
+    <execution id="38">      
+      <position height="135" width="121" x="885" y="688"/>    
+    </execution>  
+  </object>  
+  <object id="44" language="java" name="player.Player" project="SDA-TowerDefense-Framework" 
+    file="/SDA-TowerDefense-Framework/player/Player.java" binary="false" label="player" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="1344" y="0"/>    
+    <execution id="12">      
+      <position height="88" width="79" x="1010" y="578"/>    
+    </execution>  
+  </object>  
+  <object id="46" language="java" name="maps.GameMap" project="SDA-TowerDefense-Framework" 
+    file="/SDA-TowerDefense-Framework/maps/GameMap.java" binary="false" label="gameMap" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="1066" y="0"/>    
+    <execution id="16">      
+      <position height="27" width="109" x="1093" y="853"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="getInstance():misc.GameEngine" x="78" y="111">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="5" operation="createDefaultSizeMap(java.lang.String):maps.GameMap">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="7" operation="bindMap(maps.GameMap):void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="9" operation="BaseTower()">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="11" operation="Player(java.lang.String,towers.Tower,int,int)">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="12"/>  
+  </message>  
+  <message id="13" operation="StrongTowerDecorator(towers.Tower)">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="15" operation="addHomeGrounds():void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="23" operation="Renderer(java.io.PrintStream,maps.GameMap)">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="24"/>  
+  </message>  
+  <message id="25">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="26"/>  
+  </message>  
+  <message id="27">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="17"/>  
+  </message>  
+  <message id="31">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="28"/>  
+  </message>  
+  <message id="33">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="29"/>  
+  </message>  
+  <message id="35">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="37" operation="BaseTower()">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="38"/>  
+  </message>  
+  <message id="40">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="21"/>  
+  </message>  
+  <message id="42">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="19"/>  
+  </message>  
+  <message id="43">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="39"/>  
+  </message>  
+  <message id="45">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>
+</sequence-diagram>

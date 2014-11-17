@@ -30,18 +30,6 @@ public class LargeSwampMap extends GameMap
 		engine.renderTowerOnMap(tow1X, tow1Y);
 		engine.renderTowerOnMap(tow2X, tow2Y);
 	}
-
-	@Override
-	public void addNotTraversibleTerrain() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addSurroundingTerrain() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	private void swampify()
 	{

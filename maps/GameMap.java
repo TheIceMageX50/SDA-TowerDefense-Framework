@@ -13,8 +13,6 @@ import misc.TerrainType;
 public abstract class GameMap
 {
 	//TODO Probably remove detail fields?
-	protected String detailOne;
-	protected String detailTwo;
 	protected GridSquare[][] grid;
 	protected int width, height;
 	protected GridSquare[][] state;
@@ -37,8 +35,6 @@ public abstract class GameMap
 	}
 	
 	public abstract void addHomeGrounds();
-	public abstract void addNotTraversibleTerrain();
-	public abstract void addSurroundingTerrain();
 	
 	public String toString() {
 		//Add some stuff

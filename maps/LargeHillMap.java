@@ -23,18 +23,6 @@ public class LargeHillMap extends GameMap
 		
 	}
 
-	@Override
-	public void addNotTraversibleTerrain() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addSurroundingTerrain() {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	public void hillify()
 	{
 		int a, b;

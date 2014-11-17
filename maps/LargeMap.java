@@ -17,16 +17,4 @@ public class LargeMap extends GameMap {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void addNotTraversibleTerrain() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addSurroundingTerrain() {
-		// TODO Auto-generated method stub
-		
-	}
 }
