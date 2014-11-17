@@ -82,8 +82,8 @@ public class GameDriver
 					player.setPoints(player.getPoints() + 300);
 					p1Min.attackObject(p2Tow);
 				}
-				roundCount++;
 			}
+			roundCount++;
 		}
 		
 		//Game over; One of the players has won.

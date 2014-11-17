@@ -1,6 +1,7 @@
 package towers;
 
 import minions.Minion;
+import misc.GameEngine;
 import misc.StatChange;
 
 public class StrongTowerDecorator extends TowerDecorator
@@ -15,7 +16,9 @@ public class StrongTowerDecorator extends TowerDecorator
 	@Override
 	public Minion spawnMinion()
 	{
+		GameEngine engine = GameEngine.getInstance();
 		Minion minion = super.spawnMinion();
+		engine.display("[Decorator Pattern] Minion decorated with extra strength!");
 		minion = boostAtk(minion);
 		//^ increase minion's atk with private method here
 		return minion;

@@ -1,17 +1,27 @@
 package misc;
 
+import java.util.ArrayList;
+
 import maps.GameMap;
 
 public class GameEngine
 {
-	private static final GameEngine theEngine = new GameEngine();
+	private static GameEngine theEngine = null;
 	private Renderer renderer;
 	private SoundEngine se;
+	private static ArrayList<String> preInitPrints = new ArrayList<String>();
 	
 	private GameEngine()
 	{
+		preInitPrints.add("[Façade Pattern] Renderer created as underlying part of GameEngine.");
 		initRendererToDisplay();
+		//renderer is not null now...but might as well print this statement in same way.
+		preInitPrints.add("[Façade Pattern] SoundEngine created as underlying part of GameEngine.");
 		se = new SoundEngine();
+		
+		while (!preInitPrints.isEmpty()) {
+			renderer.displayToScreen(preInitPrints.remove(0));
+		}
 	}
 	
 	private void initRendererToDisplay()
@@ -51,6 +61,11 @@ public class GameEngine
 	
 	public static GameEngine getInstance()
 	{
+		
+		if (theEngine == null) {
+			preInitPrints.add("[Façade Pattern] Creating GameEngine");
+			theEngine = new GameEngine();
+		}
 		return theEngine;
 	}
 }

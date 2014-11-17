@@ -1,6 +1,7 @@
 package towers;
 
 import minions.Minion;
+import misc.GameEngine;
 
 public class BaseTower implements Tower
 {
@@ -14,6 +15,8 @@ public class BaseTower implements Tower
 	
 	public Minion spawnMinion() 
 	{
+		GameEngine engine = GameEngine.getInstance();
+		engine.display("[Decorator Pattern] Basic Minion spawn!");
 		//spawn default minion
 		return new Minion(5, 10, 2);
 	}

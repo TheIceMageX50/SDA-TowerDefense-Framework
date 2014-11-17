@@ -1,6 +1,5 @@
 package minions;
 
-import misc.GameEngine;
 import misc.StatChange;
 import towers.Tower;
 
@@ -61,7 +60,7 @@ public class Minion
 	
 	public void attackObject(Object target)
 	{
-		GameEngine engine = GameEngine.getInstance();
+		//GameEngine engine = GameEngine.getInstance();
 		
 		if (target instanceof Minion) {
 			Minion m = (Minion) target;
